@@ -5,121 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niranjan Balagopal</title>
     <style>
-        /* General Styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Makes the image circular */
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        /* CSS VARIABLES - Easy to change colors here */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --accent-color: #555555;
+            --link-color: #000000;
         }
 
-        h1 { margin: 10px 0 5px; color: #2c3e50; }
-        .headline { color: #666; font-size: 1.1em; font-weight: 500; }
-        
-        /* Content Sections */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* CONTAINER: Keeps everything neat and centered */
+        .container {
+            max-width: 700px;
+            margin: 0 auto; /* Centers the whole page */
+        }
+
+        /* HEADER: Flexbox ensures perfect centering */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* This forces the image to center */
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* PHOTO STYLING */
+        .profile-img {
+            width: 200px; /* Adjust size here */
+            height: auto;
+            border-radius: 12px; /* Slight curve on corners (0px for sharp squares) */
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1); /* Cool offset shadow effect */
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800; /* Extra bold */
+            letter-spacing: -1px; /* Tight text for modern look */
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'Courier New', Courier, monospace; /* Tech/Code font */
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        /* SECTIONS */
         section {
-            background: white;
-            padding: 25px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* MINIMALIST LINKS */
+        .social-links {
+            margin-top: 20px;
         }
         
-        h2 { color: #0077b5; /* LinkedIn Blue */ border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-        
-        .job { margin-bottom: 20px; }
-        .job-title { font-weight: bold; font-size: 1.1em; margin-bottom: 5px; }
-        .company { color: #555; font-style: italic; }
-        .date { color: #888; font-size: 0.9em; }
-        
-        /* Contact Links */
-        .links a {
+        .social-links a {
             text-decoration: none;
-            color: white;
-            background-color: #0077b5;
+            color: var(--bg-color);
+            background-color: var(--text-color);
             padding: 10px 20px;
-            border-radius: 20px;
             margin: 0 5px;
-            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
         }
-        .links a:hover { background-color: #005f93; }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* CONTENT STYLING */
+        p { margin-bottom: 15px; }
+        
+        .experience-item {
+            margin-bottom: 30px;
+        }
+        
+        .role { font-weight: bold; font-size: 1.1em; }
+        .company { color: var(--accent-color); }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="profile.jpg" alt="Niranjan Balagopal" class="profile-img">
+    <div class="container">
         
-        <h1>Niranjan Balagopal</h1>
-        <p class="headline">Software Engineer | Tech Enthusiast | [Insert LinkedIn Headline Here]</p>
-        
-        <div class="links">
-            <a href="https://www.linkedin.com/in/your-profile-link" target="_blank">LinkedIn</a>
-            <a href="mailto:your-email@example.com">Email Me</a>
-        </div>
-    </header>
+        <header>
+            <img src="profile.jpg" alt="Niranjan Balagopal" class="profile-img">
+            
+            <h1>Niranjan Balagopal</h1>
+            <div class="subtitle">&lt; Developer / Creator / Minimalist &gt;</div>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/your-link">LinkedIn</a>
+                <a href="mailto:your@email.com">Email</a>
+                <a href="#">Github</a>
+            </div>
+        </header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            [Copy your LinkedIn "About" section here. Example: I am a passionate developer with experience in building web applications...]
-        </p>
-    </section>
+        <section>
+            <h2>01. About</h2>
+            <p>
+                I build digital experiences. Currently focused on simplifying the web and creating intuitive user interfaces. I believe in code that is clean, efficient, and human-readable.
+            </p>
+        </section>
 
-    <section>
-        <h2>Experience</h2>
-        
-        <div class="job">
-            <div class="job-title">Senior Developer (Example)</div>
-            <div class="company">Tech Company Inc.</div>
-            <div class="date">Jan 2022 - Present</div>
-            <ul>
-                <li>Led a team of 5 developers to build...</li>
-                <li>Improved system efficiency by 20%...</li>
-            </ul>
-        </div>
+        <section>
+            <h2>02. Experience</h2>
+            
+            <div class="experience-item">
+                <div class="role">Software Engineer</div>
+                <div class="company">Tech Corp | 2022 - Present</div>
+                <p>Building scalable web applications and reducing load times by 40%.</p>
+            </div>
 
-        <div class="job">
-            <div class="job-title">Junior Developer</div>
-            <div class="company">Startup LLC</div>
-            <div class="date">Jan 2020 - Dec 2021</div>
-            <ul>
-                <li>Developed front-end interfaces using HTML/CSS...</li>
-                <li>Collaborated with design team...</li>
-            </ul>
-        </div>
-    </section>
+            <div class="experience-item">
+                <div class="role">Junior Developer</div>
+                <div class="company">StartUp Inc | 2020 - 2022</div>
+                <p>Collaborated with cross-functional teams to launch the MVP.</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>Education</h2>
-        <div class="job">
-            <div class="job-title">Bachelor of Technology</div>
-            <div class="company">University Name</div>
-            <div class="date">Graduated 2020</div>
-        </div>
-    </section>
+    </div>
 
 </body>
 </html>
