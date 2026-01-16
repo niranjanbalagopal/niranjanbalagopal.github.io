@@ -3,107 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niranjan Balagopal</title>
+    <title>Niranjan Balagopal | PhD Candidate</title>
     <style>
-        /* CSS VARIABLES - Easy to change colors here */
+        /* ACADEMIC MINIMALIST THEME */
         :root {
             --bg-color: #ffffff;
-            --text-color: #222222;
-            --accent-color: #555555;
-            --link-color: #000000;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --accent-color: #000000;
+            --border-color: #e0e0e0;
         }
 
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-primary);
+            line-height: 1.7;
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        /* CONTAINER: Keeps everything neat and centered */
         .container {
-            max-width: 700px;
-            margin: 0 auto; /* Centers the whole page */
+            max-width: 750px;
+            margin: 0 auto;
         }
 
-        /* HEADER: Flexbox ensures perfect centering */
+        /* HEADER */
         header {
             display: flex;
-            flex-direction: column;
-            align-items: center; /* This forces the image to center */
-            text-align: center;
-            margin-bottom: 60px;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
         }
 
-        /* PHOTO STYLING */
         .profile-img {
-            width: 200px; /* Adjust size here */
+            width: 180px;
             height: auto;
-            border-radius: 12px; /* Slight curve on corners (0px for sharp squares) */
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.1); /* Cool offset shadow effect */
-            margin-bottom: 30px;
+            border-radius: 2px; /* Sharp professional rectangle */
             display: block;
         }
 
+        .header-text { flex: 1; }
+
         h1 {
-            font-size: 2.5rem;
-            font-weight: 800; /* Extra bold */
-            letter-spacing: -1px; /* Tight text for modern look */
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            font-weight: normal;
             margin: 0 0 10px 0;
-            text-transform: uppercase;
+            color: var(--text-primary);
         }
 
         .subtitle {
-            font-family: 'Courier New', Courier, monospace; /* Tech/Code font */
-            color: var(--accent-color);
-            font-size: 1.1rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 300;
         }
+
+        .links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-right: 20px;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s ease;
+        }
+        .links a:hover { border-bottom: 1px solid var(--text-primary); }
 
         /* SECTIONS */
-        section {
-            margin-bottom: 50px;
-        }
+        section { margin-bottom: 50px; }
 
         h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
             margin-bottom: 20px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            display: inline-block;
         }
 
-        /* MINIMALIST LINKS */
-        .social-links {
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            text-decoration: none;
-            color: var(--bg-color);
-            background-color: var(--text-color);
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+        /* SKILLS TAGS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .social-links a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
+        .skill-tag {
+            background-color: #f4f4f4;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+            font-weight: 500;
         }
 
-        /* CONTENT STYLING */
-        p { margin-bottom: 15px; }
-        
-        .experience-item {
-            margin-bottom: 30px;
+        /* LIST ITEMS (Teaching/Research) */
+        .item { margin-bottom: 30px; }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
         }
-        
-        .role { font-weight: bold; font-size: 1.1em; }
-        .company { color: var(--accent-color); }
+
+        .role { font-weight: 600; font-size: 1.05rem; }
+        .date { color: var(--text-secondary); font-size: 0.9rem; font-style: italic;}
+        .institution { color: var(--text-secondary); display: block; margin-bottom: 8px; }
+
+        /* Teaching Specific */
+        .teaching-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .teaching-list li {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid var(--border-color);
+        }
+        .course-name { font-weight: 600; color: #333; }
+        .professor { color: var(--text-secondary); font-size: 0.95rem; }
+
+        p { margin-top: 0; margin-bottom: 15px; }
+
+        /* MOBILE FIX */
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; align-items: center; }
+            .profile-img { width: 150px; margin-bottom: 20px; }
+            .item-header { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -113,36 +147,95 @@
         <header>
             <img src="profile.jpg" alt="Niranjan Balagopal" class="profile-img">
             
-            <h1>Niranjan Balagopal</h1>
-            <div class="subtitle">&lt; Developer / Creator / Minimalist &gt;</div>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/your-link">LinkedIn</a>
-                <a href="mailto:your@email.com">Email</a>
-                <a href="#">Github</a>
+            <div class="header-text">
+                <h1>Niranjan Balagopal</h1>
+                <div class="subtitle">
+                    PhD Candidate • LEACHS Lab<br>
+                    Ashoka University
+                </div>
+                
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/niranjan-balagopal-9243651a1/" target="_blank">LinkedIn</a>
+                    <a href="mailto:niranjan.balagopal_phd23@ashoka.edu.in">Email</a>
+                    <a href="#">Google Scholar</a> 
+                </div>
             </div>
         </header>
 
         <section>
-            <h2>01. About</h2>
+            <h2>Research Focus</h2>
             <p>
-                I build digital experiences. Currently focused on simplifying the web and creating intuitive user interfaces. I believe in code that is clean, efficient, and human-readable.
+                I am a PhD Candidate working under Dr. Meghna Agarwala in the <strong>Landscape Ecology and Coupled Human Systems (LEACHS) Lab</strong>. 
+            </p>
+            <p>
+                My doctoral research investigates <strong>ecological succession in landscapes disrupted by afforestation in the Himalayas</strong>. I combine field biology with advanced spatial analysis to understand how human interventions modify forest recovery trajectories and ecosystem services.
             </p>
         </section>
 
         <section>
-            <h2>02. Experience</h2>
-            
-            <div class="experience-item">
-                <div class="role">Software Engineer</div>
-                <div class="company">Tech Corp | 2022 - Present</div>
-                <p>Building scalable web applications and reducing load times by 40%.</p>
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Remote Sensing & GIS (GEE)</span>
+                <span class="skill-tag">Statistical Modelling (R)</span>
+                <span class="skill-tag">Field Biology</span>
+                <span class="skill-tag">Landscape Ecology</span>
             </div>
+        </section>
 
-            <div class="experience-item">
-                <div class="role">Junior Developer</div>
-                <div class="company">StartUp Inc | 2020 - 2022</div>
-                <p>Collaborated with cross-functional teams to launch the MVP.</p>
+        <section>
+            <h2>Teaching Experience</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">Teaching Assistant for the following courses:</p>
+            
+            <ul class="teaching-list">
+                <li>
+                    <div class="course-name">Climate Change and Monsoon Dynamics (Current)</div>
+                    <div class="professor">with Dr. Parthasarathi Mukhopadhyay</div>
+                </li>
+                <li>
+                    <div class="course-name">Delhi's Air Pollution: Science and Politics (Current)</div>
+                    <div class="professor">with Dr. Meghna Agarwala</div>
+                </li>
+                <li>
+                    <div class="course-name">Statistical Modelling</div>
+                    <div class="professor">with Dr. Manvi Sharma</div>
+                </li>
+                <li>
+                    <div class="course-name">Life in the Neighbourhood (Undergraduate Biology)</div>
+                    <div class="professor">with Dr. Shivani Krishna and Dr. Kritika Garg</div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Previous Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="role">Project Officer</span>
+                    <span class="date">Past Role</span>
+                </div>
+                <span class="institution">WWF-India</span>
+                <p>
+                    Focused on human-elephant conflict mitigation and monitoring of radio-collared elephants in the Western Ghats-Nilgiris landscape.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="role">M.Sc. Environmental Studies</span>
+                    <span class="date">2020 - 2022</span>
+                </div>
+                <span class="institution">TERI School of Advanced Studies</span>
+            </div>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="role">B.Sc. Microbiology</span>
+                    <span class="date">2017 - 2020</span>
+                </div>
+                <span class="institution">University of Delhi (Ram Lal Anand College)</span>
             </div>
         </section>
 
